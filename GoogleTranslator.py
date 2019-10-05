@@ -15,7 +15,7 @@ class GoogleTranslator ():
  _host = 'translate.google.cn'
  _headers = {
  'Host': _host,
- 'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Mobile Safari/537.36',
+ 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
  'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
  'Accept-Encoding': 'gzip, deflate, br',
@@ -88,15 +88,15 @@ class GoogleTranslator ():
   'tl': 'zh-CN',
   'hl': 'zh-CN',
   'dt': 'at',
-#  'dt': 'bd',
-#  'dt': 'ex',
-#  'dt': 'ld',
-#  'dt': 'md',
-#  'dt': 'qca',
-#  'dt': 'rw',
-#  'dt': 'rm',
-#  'dt': 'ss',
-#  'dt': 't',
+  'dt': 'bd',
+  'dt': 'ex',
+  'dt': 'ld',
+  'dt': 'md',
+  'dt': 'qca',
+  'dt': 'rw',
+  'dt': 'rm',
+  'dt': 'ss',
+  'dt': 't',
   'otf': '1',
   'ssel': '0',
   'tsel': '0',
@@ -202,7 +202,9 @@ class GoogleTranslator ():
                  return result
      except Exception as ex:
          print('ERROR: ' + str(ex))
-     return ''
+         return ''
+
+
 
 
 #import time
