@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Oct  5 09:50:38 2019
-读取docx文件
+读取docx文件，并用谷歌翻译将文件按段落翻译完并将翻译内容保存在新的文件里面
 @author: XL
 """
 import os
