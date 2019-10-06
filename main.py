@@ -7,7 +7,7 @@ Created on Sat Oct  5 09:50:38 2019
 import os
 from multiprocessing import Pool
 from docx import Document
-from GoogleTranslator import GoogleTranslator
+from Translator import Translator
 
 def read_file(file_name):
     document = Document(file_name)
@@ -24,7 +24,7 @@ def save_file(content):
 
 def translate(dict_content):
     content = {}
-    translator = GoogleTranslator()
+    translator = Translator()
     for index,con in dict_content.items():
         if len(con) < 7:
             content[index] = con
@@ -36,7 +36,7 @@ def translate(dict_content):
 
 
 def main():
-    path = r'F:\0私人文件\晨晨翻译'.replace('\\', '/')
+    path = r'C:\Users\XL\Documents\GitHub\GoogleTranslator'.replace('\\', '/')
     file_list = ['t_3. Manuscript.docx', 't_4. Manuscript.docx']
     for f in file_list:
         file = os.path.join(path, f)
