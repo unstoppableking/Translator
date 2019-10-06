@@ -1,3 +1,14 @@
 
 t_3. Manuscript.docx
 *.docx
+test/.idea/inspectionProfiles/profiles_settings.xml
+test/.idea/misc.xml
+test/.idea/modules.xml
+test/.idea/test.iml
+test/.idea/vcs.xml
+test/.idea/workspace.xml
+test/__pycache__/Translator.cpython-37.pyc
+test/main_v2.py
+test/main_v3.py
+test/README.md
+test/Translator.py

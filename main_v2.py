@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Oct  5 09:50:38 2019
-读取docx文件，将翻译完的内容和英文内容一起保存在新文件中
+1.读取docx文件，将翻译完的内容和英文内容一起保存在新文件中
+2.增加显示进度
 @author: XL
 """
 import os
-from multiprocessing import Pool
 from docx import Document
 from Translator import Translator
+
 
 def read_file(file_name):
     document = Document(file_name)
@@ -15,6 +16,7 @@ def read_file(file_name):
     for con in document.paragraphs:
         file_content.append(con.text)
     return file_content
+
 
 # 相比前版本改动此处函数,但兼容上一版本的此函数
 def save_file(content, dict_content=None):
@@ -28,15 +30,16 @@ def save_file(content, dict_content=None):
         document.add_paragraph(content[p_n])
     document.save(content[0][0:5]+'.docx') #保存文档
 
+
 def translate(dict_content):
     content = {}
     translator = Translator()
-    for index,con in dict_content.items():
+    for index, con in dict_content.items():
         if len(con) < 7:
             content[index] = con
         else:
             con1 = translator.translate(con)
-#            print('size = ', len(con1))
+            print('Translate para %s/%s' %(index, len(dict_content)))
             content[index] = con1
     return content
 
