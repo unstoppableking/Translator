@@ -11,7 +11,7 @@ import json
 import time
 
 
-class GoogleTranslator ():
+class Translator ():
  _host = 'translate.google.cn'
  _headers = {
  'Host': _host,
