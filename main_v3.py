@@ -11,6 +11,7 @@ Created on Sat Oct  5 09:50:38 2019
 import os
 from multiprocessing import Pool
 from docx import Document
+from docx.oxml.ns import qn
 from Translator import Translator
 
 def read_file(file_name):
@@ -24,12 +25,16 @@ def read_file(file_name):
 # 此处为v2版本改动函数,但兼容上一版本的此函数
 def save_file(content, dict_content=None):
     document = Document()
+    document.styles['Normal'].font.name = u'宋体'
+    document.styles['Normal']._element.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+    document.styles['Body Text'].font.name = u'Time New Roman'
+    document.styles['Body Text']._element.rPr.rFonts.set(qn('w:english'), u'Time New Roman')
     hot = True
     if dict_content==None:
         hot = False
     for p_n in range(len(content)):
         if hot:
-            document.add_paragraph(dict_content[p_n])
+            document.add_paragraph(dict_content[p_n], style='Body Text')
         document.add_paragraph(content[p_n])
     document.save(content[0][0:5]+'.docx')  # 保存文档
 
